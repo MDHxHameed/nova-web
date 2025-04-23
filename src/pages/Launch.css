@@ -1,0 +1,18 @@
+.launch {
+    padding: 6rem 2rem;
+    background: #0b0b0b;
+    text-align: center;
+  }
+  
+  .launch h2 {
+    font-size: 2.6rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+  }
+  
+  .launch p {
+    font-size: 1.1rem;
+    color: #cccccc;
+    margin-bottom: 2rem;
+  }
+  
