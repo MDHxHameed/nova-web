@@ -13,9 +13,11 @@
 .home h1 {
   font-size: 3rem;
   font-weight: 700;
-  background: linear-gradient(90deg, #00ffe7, #007cf0);
+  background: linear-gradient(90deg, #00ffe7, #0f0c29);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
   margin-bottom: 1rem;
 }
 
