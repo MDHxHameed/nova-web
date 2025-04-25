@@ -1,17 +1,47 @@
-.home-container {
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  color: #fff;
+  padding: 2rem;
 }
 
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.home h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00ffe7, #007cf0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.home span {
+  color: #00ffe7;
+}
+
+.home p {
+  font-size: 1.3rem;
+  color: #ccc;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.launch-btn {
+  background: #00ffe7;
+  color: #000;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.launch-btn:hover {
+  background: #00d6c6;
+  color: #000;
+  box-shadow: 0 0 12px #00ffe7aa;
 }
