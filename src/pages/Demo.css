@@ -1,32 +1,25 @@
 .demo {
-    padding: 5rem 2rem;
-    background: linear-gradient(135deg, #0d0d0d, #1e1e2e);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh;
-  }
-  
-  .demo-box {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 3rem;
-    border-radius: 16px;
-    text-align: center;
-    max-width: 600px;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 0 25px #6a5acd33;
-  }
-  
-  .demo-box h2 {
-    font-size: 2rem;
-    color: #ffffff;
-    margin-bottom: 1rem;
-  }
-  
-  .demo-box p {
-    color: #cccccc;
-    margin-bottom: 2rem;
-    font-size: 1rem;
-  }
-  
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #0e0e0e;
+  color: white;
+}
+
+.demo h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.demo p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #bbb;
+}
+
+.demo-box iframe {
+  width: 90%;
+  max-width: 800px;
+  height: 450px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+}
