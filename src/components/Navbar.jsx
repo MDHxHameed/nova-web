@@ -10,6 +10,8 @@ const Navbar = () => {
         <li><a href="#demo">Demo</a></li>
         <li><a href="#launch">Launch</a></li>
         <li><a href="#agents">Agents</a></li>
+        <li><a href="#Pricing">Pricing</a></li>
+        <li><a href="Testimonials">Testimonials</a></li>
       </ul>
     </nav>
   );
