@@ -1,45 +1,39 @@
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import anime from "animejs";
 import "./Home.css";
 
 const Home = () => {
+  const titleRef = useRef(null);
+  const btnRef = useRef(null);
+
+  useEffect(() => {
+    anime({
+      targets: titleRef.current,
+      translateY: [-50, 0],
+      opacity: [0, 1],
+      duration: 1500,
+      easing: "easeOutExpo",
+    });
+
+    anime({
+      targets: btnRef.current,
+      scale: [0.8, 1],
+      opacity: [0, 1],
+      delay: 600,
+      duration: 1000,
+      easing: "easeOutBack",
+    });
+  }, []);
+
   return (
     <section className="home" id="home">
-      {/* Glowing orbit background */}
-      <div className="orbital-glow" />
-
-      <motion.h1
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        whileHover={{ scale: 1.02 }}
-      >
+      <h1 ref={titleRef}>
         Meet <span>NovaMind AI</span>
-      </motion.h1>
-
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 0.8 }}
-        whileInView={{ scale: [0.95, 1] }}
-      >
-        AI Agents. Shared Memory. Limitless Automation.
-      </motion.p>
-
-      <motion.a
-        href="#launch"
-        className="launch-btn"
-        whileHover={{
-          scale: 1.1,
-          boxShadow: "0px 0px 20px #00ffe7, 0 0 60px #00ffe7aa",
-          textShadow: "0 0 8px #000",
-        }}
-        whileTap={{ scale: 0.92 }}
-      >
-        🚀 Launch Now
-      </motion.a>
-
-      {/* Subtle ambient flicker effect */}
-      <div className="cosmic-flicker" />
+      </h1>
+      <p>AI Agents. Shared Memory. Limitless Automation.</p>
+      <a ref={btnRef} href="#launch" className="launch-btn">
+        Launch Now 🚀
+      </a>
     </section>
   );
 };
