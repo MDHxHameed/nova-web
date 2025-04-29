@@ -1,35 +1,76 @@
 .launch {
-  background: linear-gradient(to right, #00ffff15, #ffffff05);
-  padding: 4rem 2rem;
+  position: relative;
+  background: radial-gradient(ellipse at center, #00ffff0f, #0a0a0a 80%);
+  padding: 5rem 2rem;
   text-align: center;
   color: white;
+  overflow: hidden;
+}
+
+.launch::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: conic-gradient(from 180deg at 50% 50%, #00ffff22, transparent);
+  animation: rotateLight 18s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(60px);
+}
+
+@keyframes rotateLight {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .launch h2 {
-  font-size: 2.5rem;
-  color: #00ffff;
+  font-size: 2.8rem;
   margin-bottom: 1rem;
+  color: #00ffff;
+  background: linear-gradient(90deg, #00ffff, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 1;
+  position: relative;
 }
 
 .launch p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #ccc;
+  font-size: 1.25rem;
+  color: #bbbbbb;
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+  position: relative;
 }
 
 .launch-button {
-  padding: 1rem 2rem;
-  background: #00ffff;
+  display: inline-block;
+  padding: 1.1rem 2.4rem;
+  background: linear-gradient(90deg, #00ffff, #00cccc);
   color: #000;
-  border: none;
-  border-radius: 10px;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 1.1rem;
+  border: none;
+  border-radius: 50px;
   cursor: pointer;
-  transition: 0.3s ease;
-  text-decoration: none;
+  transition: all 0.35s ease;
+  box-shadow: 0 0 18px rgba(0, 255, 255, 0.3);
+  position: relative;
+  z-index: 1;
 }
 
 .launch-button:hover {
-  background: #00cccc;
+  transform: scale(1.08);
+  background: linear-gradient(90deg, #00cccc, #00ffff);
+  box-shadow: 0 0 28px rgba(0, 255, 255, 0.6), 0 0 50px rgba(0, 255, 255, 0.2);
 }
