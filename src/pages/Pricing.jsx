@@ -1,46 +1,63 @@
-import "./Pricing.css";
 import { motion } from "framer-motion";
+import "./Pricing.css";
 
-const plans = [
+const pricingPlans = [
   {
     title: "Starter",
-    price: "Free",
-    features: ["1 Agent", "Limited Tools", "Community Support"],
+    price: "$0/mo",
+    features: [
+      "1 AI Agent",
+      "Community Support",
+      "Basic Tools Integration"
+    ],
+    highlight: false
   },
   {
     title: "Pro",
     price: "$29/mo",
-    features: ["3 Agents", "Memory Sync", "Priority Support"],
-    highlight: true,
+    features: [
+      "Up to 5 Agents",
+      "Priority Support",
+      "Advanced Tools & Plugins"
+    ],
+    highlight: true
   },
   {
     title: "Enterprise",
-    price: "$99/mo",
-    features: ["Unlimited Agents", "Custom Tools", "Dedicated Support"],
-  },
+    price: "Custom",
+    features: [
+      "Unlimited Agents",
+      "Dedicated Account Manager",
+      "Custom Toolchain Deployment"
+    ],
+    highlight: false
+  }
 ];
 
 const Pricing = () => {
   return (
     <section className="pricing" id="pricing">
-      <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+      <motion.h2
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         Choose Your Plan 🚀
       </motion.h2>
-
       <div className="pricing-cards">
-        {plans.map((plan, index) => (
+        {pricingPlans.map((plan, index) => (
           <motion.div
-            key={index}
             className={`plan ${plan.highlight ? "highlight" : ""}`}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 * index, duration: 0.4 }}
+            key={index}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 * index, duration: 0.5 }}
           >
             <h3>{plan.title}</h3>
-            <p className="price">{plan.price}</p>
+            <div className="price">{plan.price}</div>
             <ul>
               {plan.features.map((f, i) => (
-                <li key={i}>✅ {f}</li>
+                <li key={i}>{f}</li>
               ))}
             </ul>
             <button>Get Started</button>

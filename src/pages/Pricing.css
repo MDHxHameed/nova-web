@@ -1,62 +1,124 @@
 .pricing {
-    padding: 4rem 2rem;
-    text-align: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing::before {
+  content: "";
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, #00ffe7 10%, transparent 70%);
+  top: -50%;
+  left: -50%;
+  animation: pulse 10s infinite linear;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+@keyframes pulse {
+  0% {
+    transform: rotate(0deg) scale(1);
   }
-  
-  .pricing h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+  100% {
+    transform: rotate(360deg) scale(1.5);
   }
-  
-  .pricing-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-  }
-  
-  .plan {
-    background: #1b1e25;
-    padding: 2rem;
-    border-radius: 1rem;
-    width: 300px;
-    color: #fff;
-    transition: transform 0.3s;
-    border: 2px solid transparent;
-  }
-  
-  .plan.highlight {
-    border-color: #00ffe7;
-    transform: scale(1.05);
-  }
-  
-  .plan h3 {
-    font-size: 1.5rem;
-  }
-  
-  .price {
-    font-size: 2rem;
-    margin: 1rem 0;
-    color: #00ffe7;
-  }
-  
-  .plan ul {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0;
-  }
-  
-  .plan li {
-    margin: 0.5rem 0;
-  }
-  
-  .plan button {
-    background: #00ffe7;
-    color: #000;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
+}
+
+.pricing h2 {
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #00ffe7, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pricing-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.plan {
+  background: rgba(27, 30, 37, 0.8);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  width: 300px;
+  color: #fff;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 2px solid transparent;
+  backdrop-filter: blur(8px);
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
+}
+
+.plan:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 24px #00ffe7aa;
+  border-color: #00ffe7;
+}
+
+.plan.highlight {
+  border-color: #00ffe7;
+  box-shadow: 0 0 28px #00ffe7bb;
+}
+
+.plan h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  color: #00ffe7;
+}
+
+.price {
+  font-size: 2.2rem;
+  margin: 1rem 0;
+  font-weight: 700;
+  color: #00ffe7;
+}
+
+.plan ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.plan li {
+  margin: 0.6rem 0;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.plan li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #00ffe7;
+}
+
+.plan button {
+  background: #00ffe7;
+  color: #000;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan button:hover {
+  background: #00e6d2;
+  box-shadow: 0 0 10px #00ffe7aa;
+}

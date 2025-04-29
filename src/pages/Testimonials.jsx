@@ -1,38 +1,44 @@
-import "./Testimonials.css";
 import { motion } from "framer-motion";
+import "./Testimonials.css";
 
 const testimonials = [
   {
-    name: "Sarah J.",
-    text: "NovaMind AI changed the way my team works. The agent collaboration is next level!",
+    quote: "NovaMind AI changed how I work—these agents literally anticipate my next step.",
+    author: "Sarah M., Product Designer",
   },
   {
-    name: "Mark T.",
-    text: "Impressed by how smooth the real-time memory sync is. Super helpful for dev workflows.",
+    quote: "An absolute game changer. The memory sync across agents is freaky accurate.",
+    author: "Devansh R., Automation Engineer",
   },
   {
-    name: "Lena K.",
-    text: "The best AI productivity suite I’ve used. Worth every penny.",
+    quote: "The AI developers write cleaner code than some of my colleagues 😅.",
+    author: "Lena K., Full Stack Developer",
   },
 ];
 
 const Testimonials = () => {
   return (
     <section className="testimonials" id="testimonials">
-      <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-        What People Say ❤️
+      <motion.h2
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        What Users Are Saying 💬
       </motion.h2>
+
       <div className="testimonial-cards">
         {testimonials.map((t, i) => (
           <motion.div
             className="testimonial"
             key={i}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.2 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 * i, duration: 0.5, type: "spring" }}
+            whileHover={{ scale: 1.05, boxShadow: "0 0 20px #00ffe733" }}
           >
-            <p>"{t.text}"</p>
-            <h4>- {t.name}</h4>
+            <p>“{t.quote}”</p>
+            <h4>- {t.author}</h4>
           </motion.div>
         ))}
       </div>
