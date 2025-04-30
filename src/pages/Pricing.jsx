@@ -24,7 +24,7 @@ const pricingPlans = [
   },
   {
     title: "Enterprise",
-    price: "Custom",
+    price: "$99/mo",
     features: [
       "Unlimited Agents",
       "Dedicated Account Manager",
