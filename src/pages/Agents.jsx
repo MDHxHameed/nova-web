@@ -1,65 +1,33 @@
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import "./Agents.css";
 
-const agents = [
-  {
-    name: "Nova Researcher",
-    role: "Data Specialist",
-    description: "Scours the web and databases to extract real-time insights.",
-  },
-  {
-    name: "Mind Coder",
-    role: "Developer Agent",
-    description: "Writes, debugs, and optimizes code collaboratively with you.",
-  },
-  {
-    name: "TaskMaster AI",
-    role: "Automation Brain",
-    description: "Automates your repetitive workflows and cross-app tasks.",
-  },
-];
-
-const cardVariants = {
-  offscreen: { opacity: 0, y: 50 },
-  onscreen: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.2,
-      duration: 0.6,
-      type: "spring",
-      bounce: 0.3,
-    },
-  }),
-};
-
 const Agents = () => {
+  const [agents, setAgents] = useState([]);
+
+  useEffect(() => {
+    const fetchAgents = async () => {
+      try {
+        const res = await axios.get("http://localhost:5000/api/agents");
+        setAgents(res.data);
+      } catch (err) {
+        console.error("Error fetching agents:", err);
+      }
+    };
+
+    fetchAgents();
+  }, []);
+
   return (
     <section className="agents" id="agents">
-      <motion.h2
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        Meet Your <span className="glow">AI Agents</span>
-      </motion.h2>
-
-      <div className="agent-grid">
-        {agents.map((agent, i) => (
-          <motion.div
-            className="agent-card"
-            key={i}
-            custom={i}
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ once: true }}
-            variants={cardVariants}
-          >
+      <h2>Meet Our AI Agents</h2>
+      <div className="agent-cards">
+        {agents.map((agent, index) => (
+          <div key={index} className="agent-card">
             <h3>{agent.name}</h3>
-            <p className="role">{agent.role}</p>
+            <p><strong>{agent.role}</strong></p>
             <p>{agent.description}</p>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>
