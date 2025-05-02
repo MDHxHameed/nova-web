@@ -1,6 +1,6 @@
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import "./styles/globals.css";
+import  "./styles/globals.css";
 import Agents from "./pages/Agents";
 import Demo from "./pages/Demo";
 import Launch from './pages/Launch';
